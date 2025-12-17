@@ -100,9 +100,9 @@ const Scene3D: React.FC = () => {
     <div className="canvas-container w-full h-full">
       <Canvas
         shadows
-        dpr={[1, 1.5]} // Optimize pixel ratio
-        gl={{ antialias: true, powerPreference: "high-performance" }}
-        performance={{ min: 0.5 }} // Allow performance regression
+        dpr={[1, 2]}
+        gl={{ antialias: true, powerPreference: "default", preserveDrawingBuffer: true }}
+        performance={{ min: 0.5 }}
       >
         <WorkflowContext.Provider value={workflowContext}>
           <PerspectiveCamera makeDefault position={[0.5, 2, 5.5]} fov={55} />
@@ -117,14 +117,14 @@ const Scene3D: React.FC = () => {
           />
 
           {/* Lighting & Environment */}
-          <ambientLight intensity={0.1} />
+          <ambientLight intensity={0.5} />
           <Environment preset="city" />
-          <directionalLight position={[5, 8, 5]} intensity={1.2} castShadow shadow-mapSize={[1024, 1024]} />
+          <directionalLight position={[5, 8, 5]} intensity={1.2} castShadow shadow-mapSize={[512, 512]} />
           <pointLight position={[-5, 5, -5]} intensity={0.5} color="#00d4ff" />
           <pointLight position={[3, 3, 0]} intensity={0.5} color="#ffaa00" />
 
           {/* Background */}
-          <Stars radius={100} depth={50} count={1000} factor={4} saturation={0} fade speed={0.5} />
+          <Stars radius={100} depth={50} count={500} factor={4} saturation={0} fade speed={0.5} />
           <color attach="background" args={['#030810']} />
           <fog attach="fog" args={['#030810', 10, 30]} />
 
