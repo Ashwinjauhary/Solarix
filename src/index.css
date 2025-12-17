@@ -1,8 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -48,12 +48,12 @@
     --gradient-cyber: linear-gradient(135deg, hsl(170 100% 50% / 0.2), hsl(145 100% 50% / 0.1));
     --gradient-solar: linear-gradient(135deg, hsl(45 100% 55% / 0.3), hsl(30 100% 50% / 0.1));
     --gradient-glass: linear-gradient(135deg, hsl(230 30% 15% / 0.8), hsl(230 30% 10% / 0.6));
-    
+
     /* Glow Shadows */
     --glow-primary: 0 0 30px hsl(170 100% 50% / 0.4);
     --glow-accent: 0 0 30px hsl(45 100% 55% / 0.4);
     --glow-secondary: 0 0 30px hsl(145 100% 50% / 0.4);
-    
+
     /* Sidebar */
     --sidebar-background: 230 30% 6%;
     --sidebar-foreground: 180 100% 95%;
@@ -76,12 +76,18 @@
     font-family: 'Rajdhani', sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Orbitron', sans-serif;
   }
 }
 
 @layer components {
+
   /* Glassmorphism Panel */
   .glass-panel {
     background: var(--gradient-glass);
@@ -102,22 +108,22 @@
   .neon-text-primary {
     color: hsl(var(--primary));
     text-shadow: 0 0 10px hsl(var(--primary) / 0.8),
-                 0 0 20px hsl(var(--primary) / 0.6),
-                 0 0 30px hsl(var(--primary) / 0.4);
+      0 0 20px hsl(var(--primary) / 0.6),
+      0 0 30px hsl(var(--primary) / 0.4);
   }
 
   .neon-text-accent {
     color: hsl(var(--accent));
     text-shadow: 0 0 10px hsl(var(--accent) / 0.8),
-                 0 0 20px hsl(var(--accent) / 0.6),
-                 0 0 30px hsl(var(--accent) / 0.4);
+      0 0 20px hsl(var(--accent) / 0.6),
+      0 0 30px hsl(var(--accent) / 0.4);
   }
 
   .neon-text-secondary {
     color: hsl(var(--secondary));
     text-shadow: 0 0 10px hsl(var(--secondary) / 0.8),
-                 0 0 20px hsl(var(--secondary) / 0.6),
-                 0 0 30px hsl(var(--secondary) / 0.4);
+      0 0 20px hsl(var(--secondary) / 0.6),
+      0 0 30px hsl(var(--secondary) / 0.4);
   }
 
   /* Animated Border */
@@ -132,12 +138,11 @@
     inset: 0;
     border-radius: inherit;
     padding: 1px;
-    background: linear-gradient(90deg, 
-      hsl(var(--primary)), 
-      hsl(var(--accent)), 
-      hsl(var(--secondary)),
-      hsl(var(--primary))
-    );
+    background: linear-gradient(90deg,
+        hsl(var(--primary)),
+        hsl(var(--accent)),
+        hsl(var(--secondary)),
+        hsl(var(--primary)));
     background-size: 300% 100%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -147,8 +152,13 @@
   }
 
   @keyframes border-flow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 300% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+
+    100% {
+      background-position: 300% 50%;
+    }
   }
 
   /* Pulse Animation */
@@ -157,13 +167,16 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% { 
+
+    0%,
+    100% {
       box-shadow: 0 0 5px hsl(var(--primary) / 0.5),
-                  0 0 10px hsl(var(--primary) / 0.3);
+        0 0 10px hsl(var(--primary) / 0.3);
     }
-    50% { 
+
+    50% {
       box-shadow: 0 0 20px hsl(var(--primary) / 0.8),
-                  0 0 40px hsl(var(--primary) / 0.5);
+        0 0 40px hsl(var(--primary) / 0.5);
     }
   }
 
@@ -173,9 +186,19 @@
   }
 
   @keyframes data-flow {
-    0% { transform: translateX(-100%); opacity: 0; }
-    50% { opacity: 1; }
-    100% { transform: translateX(100%); opacity: 0; }
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
   }
 
   /* Floating Animation */
@@ -184,8 +207,15 @@
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
 
   /* Scan Line Effect */
@@ -206,8 +236,15 @@
   }
 
   @keyframes scan {
-    0% { top: 0; opacity: 1; }
-    100% { top: 100%; opacity: 0; }
+    0% {
+      top: 0;
+      opacity: 1;
+    }
+
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
   }
 
   /* Progress Ring */
@@ -223,7 +260,7 @@
 
   /* Grid Lines Background */
   .grid-bg {
-    background-image: 
+    background-image:
       linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
       linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
     background-size: 50px 50px;
