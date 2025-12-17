@@ -13,15 +13,7 @@ const Header: React.FC<HeaderProps> = ({ onMobileMenuToggle }) => {
     <header className="h-14 md:h-16 glass-panel border-b border-border flex items-center justify-between px-4 md:px-6 shrink-0 relative z-30">
       {/* Left - Menu & Title */}
       <div className="flex items-center gap-3 md:gap-4">
-        {/* Mobile Menu Toggle */}
-        <button
-          type="button"
-          onClick={onMobileMenuToggle}
-          className="md:hidden p-3 -ml-3 mr-2 text-muted-foreground hover:text-primary transition-colors relative z-50"
-          aria-label="Toggle Menu"
-        >
-          <Menu className="w-6 h-6" />
-        </button>
+
 
         <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg bg-accent/20 flex items-center justify-center">
           <Zap className="w-5 h-5 md:w-6 md:h-6 text-accent" />

@@ -108,10 +108,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
               <h3 className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Institution</h3>
               <p className="text-xs text-primary font-bold font-orbitron tracking-wide">PSIT CHE</p>
             </div>
-            <div>
-              <h3 className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Guided By</h3>
-              <p className="text-xs text-secondary font-bold font-orbitron tracking-wide">Mr. Mohd Ijlal Anjum</p>
-            </div>
+
           </div>
         </div>
       </div>

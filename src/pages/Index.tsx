@@ -8,7 +8,7 @@ import AnalyticsPanel from '@/components/ui/AnalyticsPanel';
 import StepDescription from '@/components/ui/StepDescription';
 import { DashboardView, AnalyticsView, HealthView, FutureView } from '@/components/dashboard/ProjectContent';
 
-import { Maximize2, Minimize2, X } from 'lucide-react';
+import { Maximize2, Minimize2, X, Menu } from 'lucide-react';
 
 const Index: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState('dashboard');
@@ -19,6 +19,17 @@ const Index: React.FC = () => {
     <WorkflowProvider>
       <div className="h-screen w-screen overflow-hidden bg-background grid-bg relative">
         <div className="h-full w-full flex">
+
+          {/* Mobile Menu Toggle - Floating Fixed Button */}
+          {!isFullScreen && (
+            <button
+              onClick={() => setIsMobileMenuOpen(true)}
+              className="md:hidden fixed top-3 left-3 z-[70] p-2.5 bg-background/80 border border-primary/30 rounded-lg text-primary backdrop-blur-md shadow-[0_0_15px_rgba(0,0,0,0.5)] active:scale-95 transition-all"
+              aria-label="Open Menu"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
+          )}
 
           {/* Mobile Sidebar Overlay */}
           {!isFullScreen && isMobileMenuOpen && (
@@ -57,7 +68,7 @@ const Index: React.FC = () => {
           <div className="flex-1 flex flex-col min-w-0 h-full">
             {/* Header - Hidden in Full Screen */}
             {!isFullScreen && (
-              <Header onMobileMenuToggle={() => setIsMobileMenuOpen(true)} />
+              <Header />
             )}
 
             {/* Main Area */}
