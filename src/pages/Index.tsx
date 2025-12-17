@@ -76,7 +76,7 @@ const Index: React.FC = () => {
               {activeTab === 'workflow' ? (
                 <div className={`flex flex-col md:flex-row w-full h-full ${isFullScreen ? '' : 'gap-4'} overflow-y-auto md:overflow-hidden`}>
                   {/* Left - 3D Scene */}
-                  <div className={`flex-1 flex flex-col ${isFullScreen ? '' : 'gap-4'} min-h-[50vh] md:min-h-0 min-w-0`}>
+                  <div className={`flex-none md:flex-1 flex flex-col ${isFullScreen ? '' : 'gap-4'} min-h-[50vh] md:min-h-0 min-w-0`}>
                     {/* 3D Canvas */}
                     <div className={`flex-1 glass-panel ${isFullScreen ? 'rounded-none border-0' : 'rounded-xl'} overflow-hidden relative min-h-[300px]`}>
                       <Scene3D />
