@@ -15,11 +15,9 @@ const Header: React.FC<HeaderProps> = ({ onMobileMenuToggle }) => {
       <div className="flex items-center gap-3 md:gap-4">
         {/* Mobile Menu Toggle */}
         <button
-          onClick={(e) => {
-            e.stopPropagation();
-            onMobileMenuToggle?.();
-          }}
-          className="md:hidden p-2 -ml-2 text-muted-foreground hover:text-primary transition-colors relative z-50 cursor-pointer"
+          type="button"
+          onClick={onMobileMenuToggle}
+          className="md:hidden p-3 -ml-3 mr-2 text-muted-foreground hover:text-primary transition-colors relative z-50"
           aria-label="Toggle Menu"
         >
           <Menu className="w-6 h-6" />
