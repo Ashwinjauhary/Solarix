@@ -89,20 +89,6 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, onTabChange }) => {
       {/* Team Info */}
       <div className="px-4 py-3 border-t border-border bg-muted/5">
         <div className="space-y-3">
-          <div>
-            <h3 className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-1.5 flex items-center gap-2">
-              <span className="w-1 h-1 rounded-full bg-primary/50"></span>
-              Presented By
-            </h3>
-            <div className="grid grid-cols-1 gap-0.5 pl-3 border-l text-left border-primary/20">
-              {['Arpit Bajpai', 'Ashwin Jauhary', 'Rashi Gupta', 'Swastika Gupta', 'Sonali Chauhan', 'Shreya Gupta'].map((name) => (
-                <div key={name} className="text-[11px] text-foreground/70 font-rajdhani tracking-wide hover:text-primary transition-colors cursor-default">
-                  {name}
-                </div>
-              ))}
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 gap-2">
             <div>
               <h3 className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider mb-0.5">Institution</h3>
